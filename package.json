@@ -1,0 +1,95 @@
+{
+  "name": "generator-krimzen-ninja-module",
+  "version": "0.0.0",
+  "description": "NodeJS modules generator with ES6 (Babel), Jest, CircleCI, Codecov, Documentation, Snyk, Nsp, prettier and more. This generator allows you to build node modules that follow the KrimZen Ninja conventions.",
+  "homepage": "https://github.com/KrimzenNinja/generator-krimzen-ninja-module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KrimzenNinja/generator-krimzen-ninja-module.git"
+  },
+  "main": "generators/app/index.js",
+  "files": [
+    "generators"
+  ],
+  "engines": {
+    "node": ">=6"
+  },
+  "author": {
+    "name": "Ryan Kotzen",
+    "email": "potz666@gmail.com",
+    "url": "https://github.com/eXigentCoder"
+  },
+  "scripts": {
+    "test": "jest",
+    "coverage": "npm test -- --coverage",
+    "lint": "eslint src",
+    "build:clean": "rimraf generators",
+    "build:copy": "ncp src generators",
+    "prebuild": "npm run build:clean && npm run build:copy",
+    "build": "babel src -d generators --ignore test.js,templates",
+    "build:watch": "npm-watch",
+    "patch": "npm version patch && npm publish",
+    "minor": "npm version minor && npm publish",
+    "major": "npm version major && npm publish",
+    "prepublishOnly": "npm run lint && npm test && npm run build",
+    "postpublish": "git push --follow-tags"
+  },
+  "watch": {
+    "build": {
+      "patterns": [
+        "src"
+      ],
+      "extensions": "*",
+      "ignore": "test.js"
+    }
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "coverageDirectory": "<rootDir>/coverage"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "generator",
+    "yeoman",
+    "package",
+    "node",
+    "npm",
+    "es6",
+    "prettier",
+    "babel",
+    "jest",
+    "circleci",
+    "codecov",
+    "documentation",
+    "KrimZenNinja"
+  ],
+  "dependencies": {
+    "glob": "^7.1.1",
+    "inquirer-npm-name": "^2.0.0",
+    "lodash": "^4.17.4",
+    "nodegit": "^0.16.0",
+    "ora": "^0.4.1",
+    "tmp": "^0.0.31",
+    "yeoman-generator": "^1.0.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-eslint": "^7.1.1",
+    "babel-jest": "^18.0.0",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-preset-env": "^1.1.8",
+    "babel-preset-stage-2": "^6.18.0",
+    "eslint": "^3.13.1",
+    "eslint-config-prettier": "^2.2.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "jest-cli": "^18.1.0",
+    "ncp": "^2.0.0",
+    "npm-watch": "^0.1.7",
+    "prettier": "^1.4.4",
+    "rimraf": "2.6.1",
+    "yeoman-assert": "^2.2.2",
+    "yeoman-test": "^1.6.0"
+  },
+  "license": "MIT"
+}
