@@ -105,7 +105,7 @@ export default class extends Generator {
                 .replace(/potz666@gmail.com/g, this.answers.authorEmail)
                 .replace(/eXigentCoder/g, this.answers.githubUsername)
                 .replace(/Ryan Kotzen/g, this.answers.authorName)
-                .replace(/"version": "[a-zA-Z\-\d.]+",/g, '"version": "0.0.1",')
+                .replace(/"version": "[a-zA-Z\-\d.]+",/g, '"version": "0.0.0",')
                 .replace(/Template project for building KrimZen Ninja npm templates/g, this.answers.description);
             this.fs.write(this.destinationPath(file), contents);
         });
