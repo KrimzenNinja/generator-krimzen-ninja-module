@@ -22,7 +22,9 @@
   "scripts": {
     "test": "jest",
     "coverage": "npm test -- --coverage",
-    "lint": "eslint src",
+    "codecov": "codecov",
+    "lint": "npm run lint-ci -- --fix",
+    "lint-ci": "eslint src",
     "build:clean": "rimraf generators",
     "build:copy": "ncp src generators",
     "prebuild": "npm run build:clean && npm run build:copy",
@@ -79,6 +81,7 @@
     "babel-plugin-add-module-exports": "^0.2.1",
     "babel-preset-env": "^1.1.8",
     "babel-preset-stage-2": "^6.18.0",
+    "codecov": "^3.0.0",
     "eslint": "^3.13.1",
     "eslint-config-prettier": "^2.2.0",
     "eslint-plugin-node": "^5.1.0",
