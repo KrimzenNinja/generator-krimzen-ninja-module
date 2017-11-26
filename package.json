@@ -90,9 +90,7 @@
     "ncp": "^2.0.0",
     "npm-watch": "^0.3.0",
     "prettier": "^1.4.4",
-    "rimraf": "2.6.2",
-    "yeoman-assert": "^3.1.0",
-    "yeoman-test": "^1.6.0"
+    "rimraf": "2.6.2"
   },
   "license": "MIT"
 }
